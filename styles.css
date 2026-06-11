@@ -1,0 +1,83 @@
+/* Star button in the note header */
+.star-pin-action.is-pinned {
+  color: var(--color-yellow, #e0ac00);
+}
+.star-pin-action.is-pinned svg {
+  fill: var(--color-yellow, #e0ac00);
+}
+
+/* Arc-style pinned tiles at the top of the file explorer */
+.star-pins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 6px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.star-pins-grid.is-empty {
+  display: none;
+}
+
+.star-pin-tile {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: var(--background-secondary-alt);
+  cursor: pointer;
+  transition: background 120ms ease, transform 120ms ease;
+  user-select: none;
+}
+.star-pin-tile:hover {
+  background: var(--background-modifier-hover);
+  transform: translateY(-1px);
+}
+.star-pin-tile.is-missing {
+  opacity: 0.45;
+}
+.star-pin-tile.is-dragging {
+  opacity: 0.4;
+}
+.star-pin-tile.drop-before,
+.star-pin-tile.drop-after {
+  position: relative;
+}
+.star-pin-tile.drop-before::before,
+.star-pin-tile.drop-after::before {
+  content: "";
+  position: absolute;
+  top: 6%;
+  bottom: 6%;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--interactive-accent);
+}
+.star-pin-tile.drop-before::before {
+  left: -4px;
+}
+.star-pin-tile.drop-after::before {
+  right: -4px;
+}
+
+.star-pin-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 60%;
+  color: var(--text-normal);
+}
+.star-pin-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.star-pin-icon.is-mono {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+}
+.star-pin-emoji {
+  font-size: 18px;
+  line-height: 1;
+}
