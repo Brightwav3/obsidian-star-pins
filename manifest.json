@@ -1,7 +1,7 @@
 {
   "id": "star-pins",
   "name": "Star Pins",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "minAppVersion": "1.4.0",
   "description": "Star a file from its header to pin it as an Arc-style tile at the top of the file explorer.",
   "author": "Šimon Zelenka",
